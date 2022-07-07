@@ -1,11 +1,14 @@
 import React from "react";
-// import ListingCard from "./ListingCard";
+import ListingCard from "./ListingCard";
 
-function ListingsContainer() {
+function ListingsContainer({searchResult, setListingArray, listingArray}) {
   return (
     <main>
       <ul className="cards">
-        {/* use the ListingCard component to display listings */}
+        {searchResult.map((item)=>{
+          return(<ListingCard listingArray={listingArray} setListingArray={setListingArray} searchResult={searchResult} item={item}/>)
+        })}
+       
       </ul>
     </main>
   );
